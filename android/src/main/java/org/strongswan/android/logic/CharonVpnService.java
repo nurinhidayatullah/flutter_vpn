@@ -408,7 +408,7 @@ public class CharonVpnService extends VpnService implements Runnable, VpnStateSe
 				{
 					flags |= PendingIntent.FLAG_IMMUTABLE;
 				}
-                PendingIntent pending = PendingIntent.getActivity(getApplicationContext(), 0, intent, flags);
+                //PendingIntent pending = PendingIntent.getActivity(getApplicationContext(), 0, intent, flags);
 //                PendingIntent pending = PendingIntent.getActivity(getApplicationContext(), 0, intent,
 //                        PendingIntent.FLAG_UPDATE_CURRENT);
 //                builder.addAction(R.drawable.ic_notification_connecting, getString(R.string.retry), pending);
@@ -444,12 +444,12 @@ public class CharonVpnService extends VpnService implements Runnable, VpnStateSe
 			flags |= PendingIntent.FLAG_IMMUTABLE;
 		}
         if (!publicVersion) {
-            if (add_action) {
-                //Intent intent = new Intent(getApplicationContext(), VpnProfileControlActivity.class);
-                //intent.setAction(VpnProfileControlActivity.DISCONNECT);
-                PendingIntent pending = PendingIntent.getActivity(getApplicationContext(), 0, intent,
-                        flags);
-            }
+            //if (add_action) {
+            //    //Intent intent = new Intent(getApplicationContext(), VpnProfileControlActivity.class);
+            //    //intent.setAction(VpnProfileControlActivity.DISCONNECT);
+            //    PendingIntent pending = PendingIntent.getActivity(getApplicationContext(), 0, intent,
+            //            flags);
+            //}
             if (error == ErrorState.NO_ERROR) {
                 builder.setContentText(name);
             }
@@ -457,8 +457,8 @@ public class CharonVpnService extends VpnService implements Runnable, VpnStateSe
         }
 
         //Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-        PendingIntent pending = PendingIntent.getActivity(getApplicationContext(), 0, intent,
-                flags);
+        //PendingIntent pending = PendingIntent.getActivity(getApplicationContext(), 0, intent,
+        //        flags);
         builder.setContentIntent(pending);
         return builder.build();
     }
